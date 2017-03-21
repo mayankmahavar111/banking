@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Banking</title>
+    {% load staticfiles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href=https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'chkbal/back.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div>
+        {% if user.is_authenticated %}
+            <a href="/chkbal/">home</a>
+        <a href="/chkbal/profile/update">update</a>
+            <a href="/chkbal/profile">Profile</a>
+            <a href="/chkbal/logout">Logout</a>
+            <a href="/chkbal/change-password">Change Password</a>
+
+
+        {% else %}
+            <a href="/chkbal/">home </a>
+        <a href="/chkbal/login">Login </a>
+        <a href="/chkbal/register">register </a>
+            <a href="/chkbal/help">help </a>
+            <a href="/chkbal/about">about-us</a>
+
+        {% endif %}
+    </div>
+{% block body %}
+
+{% endblock %}
+</body>
+</html>

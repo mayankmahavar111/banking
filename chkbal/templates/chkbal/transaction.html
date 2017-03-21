@@ -1,0 +1,9 @@
+{% extends 'chkbal/base.html' %}
+{% block body %}
+    This is Transaction Page.
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Procceed</button>
+    </form>
+{% endblock %}

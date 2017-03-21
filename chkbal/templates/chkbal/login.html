@@ -1,0 +1,20 @@
+{% extends 'chkbal/base.html' %}
+
+{% block body %}
+        <div>
+        <h1>
+            You can Login here.
+        </h1>
+        <p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        </p>
+            <a title="Facebook" class="socialaccount_provider facebook" href="/accounts/facebook/login/?process=login">Facebook</a>
+        <h1>{{ myname }}</h1>
+        <a href="/chkbal/register">register</a>
+            <a href="/chkbal/reset-password">forgot password</a>
+        </div>
+{% endblock %}

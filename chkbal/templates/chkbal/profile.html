@@ -1,0 +1,23 @@
+{% extends 'chkbal/base.html' %}
+{% block body %}
+
+{% if x.accountno != '' %}
+<p>Username:{{ user }}</p>
+<p>Firstname:{{ user.first_name }}</p>
+<p>email:{{ user.email }}</p>
+    <p>city:{{ user.userprofile.city }}</p>
+    <p>accountno:{{ user.userprofile.accountno }}</p>
+
+<a href="/chkbal/profile/update">change_personal_details </a>
+    <a href="/chkbal/profile/account-details">account_details </a>
+    <a href="/chkbal/profile/enquiry">enquiry </a>
+<a href="/chkbal/logout">Logout </a>
+    <a href="/chkbal/profile/transaction">Transfer Money </a>
+    <a href="/chkbal/profile/mini-statement">Mini-statement </a>
+    {% else %}
+        <p>{{ user }} please Complete Your Details.</p>
+    <a href="/chkbal/profile/account-details">Proceed.</a>
+    {% endif %}
+
+
+{% endblock %}

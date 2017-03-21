@@ -1,0 +1,12 @@
+{% extends 'chkbal/base.html' %}
+{% block body %}
+    This is the enquiry page.
+    <p>Account NO.{{ user.userprofile.accountno }}</p>
+    <p>Account Holder Name : {{ user }}</p>
+    <p>Ifsc Code{{ user.userprofile.IFSC_Code }}</p>
+    <p>Email:{{ user.email }}</p>
+    <p>Phone:{{ user.userprofile.phone }}</p>
+    <p>Adrress:{{ user.userprofile.address }}</p>
+    <p>Current Balance. : {{ user.userprofile.balance }} </p>
+    <p>Last login : {{ user.last_login }}</p>
+{% endblock %}
