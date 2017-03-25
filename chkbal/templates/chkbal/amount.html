@@ -4,5 +4,6 @@
     {% csrf_token%}
     {{ form.as_p }}
     <p>Your Current Balance is : {{ x.balance }}</p>
+        <p>Account no. {{y.accountno}} is recieving {{y.name}}</p>
     </form>
 {% endblock %}
