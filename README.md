@@ -14,3 +14,7 @@ to run the website each time execute this command
 python manage.py runserver
 
 then visit 127.0.0.1:8000/chkbal
+
+
+
+This project is not complete yet, it will be updating regularly before final stage.
