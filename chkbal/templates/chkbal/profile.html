@@ -1,12 +1,35 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-
+  <!-- Call to action Start -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <h2>Drop Us your Suggestions.</h2>
+              <p>One account is all you need</p>
+              <a class="btn btn-default btn-call-to-action" href="/chkbal/feedback/">Feedback</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
 {% if x.accountno != '' %}
 <p>Username:{{ user }}</p>
 <p>Firstname:{{ user.first_name }}</p>
 <p>email:{{ user.email }}</p>
     <p>city:{{ user.userprofile.city }}</p>
     <p>accountno:{{ user.userprofile.accountno }}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
 
 <a href="/chkbal/profile/update">change_personal_details </a>
     <a href="/chkbal/profile/account-details">account_details </a>

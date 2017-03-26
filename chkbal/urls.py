@@ -4,6 +4,7 @@ from django.contrib.auth.views import login,logout,password_reset,password_reset
 urlpatterns = [
 	url(r'^data/(?P<acc>[a-zA-Z]{1,16})/$',views.data,name='data'),
 	url(r'register/$',views.register,name='register'),
+	url(r'^feedback/$',views.feedback,name='feeedback'),
 	url(r'logout/$',logout,{'template_name':'chkbal/logout.html'}),
 	url(r'login/$',login,{'template_name':'chkbal/login.html'}),
 	url(r'profile/$',views.profile,name='profile'),

@@ -98,6 +98,8 @@ def updateAccount(request):
 		args={'form':form}
 		return render(request,'chkbal/update_account.html',args)
 
+def feedback(request):
+	return  render(request,'chkbal/feedback.html')
 
 
 def data(request,acc):

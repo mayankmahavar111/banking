@@ -33,8 +33,6 @@
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src={% static "chkbal/js/google-map-init.js" %}></script>
 
-    <script src={% static "chkbal/js/google-map-init.js" %}></script>
-
 
   </head>
   <body>
@@ -84,6 +82,7 @@
                     <li><a href="/chkbal/login/">Login</a></li>
                     <li><a href="/chkbal/about/">About Us</a></li>
                     <li><a href="/chkbal/help/">Help</a></li>
+                    <li><a href="/chkbal/feedback/">Feedback</a></li>
                   </ul>
                 {% endif %}
                 </div><!-- /.navbar-collapse -->
@@ -93,6 +92,8 @@
         </div>
       </div>
     </header><!-- header close -->
+
+
     {% block body %}
 
     {% endblock %}

@@ -1,9 +1,19 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
+    <section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
 <form method="post">
-    {% csrf_token %} }
+    {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">update</button>
 </form>
     <button> <a href="/chkbal/profile">go back</a> </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
 {% endblock %}
