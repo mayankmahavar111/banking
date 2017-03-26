@@ -26,7 +26,7 @@ def fund(request,y) :
 	else:
 		form =Transaction()
 		x=UserProfile.objects.get(user=request.user)
-		print y
+		print (y)
 		otheracc=UserProfile.objects.get(user__first_name=y)
 		args={
 			'form':form,
@@ -103,7 +103,7 @@ def updateAccount(request):
 def data(request,acc):
 	y=UserProfile.objects.get(user__first_name=acc)
 	x=UserProfile.objects.get(user=request.user)
-	print x.accountno
+	print (x.accountno)
 	return render(request,'chkbal/data.html',{'x':x,'y':y})
 
 def help(request):
@@ -215,7 +215,6 @@ def checkAccount(request):
 		form=OtherAccountForm(request.POST)
 		if form.is_valid():
 			y=form.cleaned_data['name']
-<<<<<<< HEAD
 			##print y
 			#x=UserProfile.objects.filter(user=y)
 			#if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
@@ -224,17 +223,15 @@ def checkAccount(request):
 			#else:
 			#	print "invalid"
 			#	return redirect('/chkabal/checkAccount')
-=======
-			print y
+			print (y)
 			x=UserProfile.objects.get(user__first_name=y)
-			print x.accountno,form.cleaned_data['account']
+			print (x.accountno,form.cleaned_data['account'])
 			if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
-				print "Valid"
+				print ("Valid")
 				return redirect('/chkbal/fund/'+x.name)
 			else:
-				print "invalid"
+				print ("invalid")
 				return redirect('/chkbal/checkAccount')
->>>>>>> origin/master
 	else:
 		form=OtherAccountForm()
 		args={'form':form}
