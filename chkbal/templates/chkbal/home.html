@@ -2,7 +2,8 @@
 {% block body %}
 <div>
 <p>this is home page.</p>
+    {% if user.id %}
 <p>{{ user.first_name }} is looged in.</p>
-
+    {% endif %}
 </div>
 {% endblock %}

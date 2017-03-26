@@ -113,10 +113,8 @@ def Aboutus(request):
 	return render(request,'chkbal/about.html')
 
 def index(request):
-	if request.user.id :
-		return render(request,'chkbal/home.html',{'user':request.user})
-	else:
-		return render(request,'chkbal/user_home.html')
+	return render(request,'chkbal/home.html',{'user':request.user})
+
 
 @login_required()
 def profile(request):
