@@ -1,11 +1,32 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-you can register here.
-<p>
-    <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">register</button>
-    </form>
-</p>
+    <!-- Slider Start -->
+        <section id="global-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="block">
+                  <h1>Register Here</h1>
+                  <p>To start using our premium and secured services.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+                    <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-default" type="submit">Register</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
 {% endblock %}

@@ -40,17 +40,17 @@ def deposite(request):
 			c2 = int(form.cleaned_data['Text2'])
 			c3 = int(form.cleaned_data['Text3'])
 			c4 = int(form.cleaned_data['Text4'])
-			print c1,c2,c3,c4
+			print (c1,c2,c3,c4)
 			c1=c1+c3
 			c2=c2-c4
 			if c1*c2%50 == 0:
 				x.balance= int(x.balance)+c1*c2/100
 
 				x.save()
-				print x.balance
+				print (x.balance)
 				return redirect('/chkbal/profile')
 			else:
-				print "Invalid Serial Key"
+				print ("Invalid Serial Key")
 				return render(request,'chkbal/Invalid.html')
 
 		return redirect('/chkbal/deposite')
@@ -63,11 +63,11 @@ def deposite(request):
 def updateAccount(request):
 
 	if request.method=="POST":
-		print "Hello"
+		print ("Hello")
 		form = AccountForm(request.POST)
 		x = UserProfile.objects.get(user=request.user)
 		if form.is_valid():
-			print 'World'
+			print ('World')
 			account=form.cleaned_data['accountno']
 			ifsc=form.cleaned_data['IFSC_Code']
 			name=form.cleaned_data['name']
@@ -108,10 +108,7 @@ def Aboutus(request):
 	return render(request,'chkbal/about.html')
 
 def index(request):
-	if request.user.id :
-		return render(request,'chkbal/home.html',{'user':request.user})
-	else:
-		return render(request,'chkbal/user_home.html')
+	return render(request,'chkbal/home.html')
 
 @login_required()
 def profile(request):
@@ -125,7 +122,7 @@ def profile(request):
 def register(request):
 	if request.user.id:
 		return redirect('/chkbal')
-	print 'Hello World'
+	print ('Hello World')
 	if request.method=='POST':
 		form=RegistrationForm(request.POST)
 		if form.is_valid():
@@ -141,13 +138,13 @@ def register(request):
 @login_required
 def account(request):
 	if request.method=='POST':
-		print "Hello"
+		print ("Hello")
 		form=AccountForm(request.POST,request.UserProfile(instance=request.user))
 
 		if form.is_valid():
 
 			form.save()
-			print "World"
+			print ("World")
 
 
 			return redirect('/chkbal/profile')
@@ -213,14 +210,14 @@ def checkAccount(request):
 		form=OtherAccountForm(request.POST)
 		if form.is_valid():
 			y=form.cleaned_data['name']
-			print y
-			x=UserProfile.objects.filter(user=y)
-			if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
-				print "Valid"
-				return redirect('/chkbal/fund')
-			else:
-				print "invalid"
-				return redirect('/chkabal/checkAccount')
+			##print y
+			#x=UserProfile.objects.filter(user=y)
+			#if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
+			#	print "Valid"
+			#	return redirect('/chkbal/fund')
+			#else:
+			#	print "invalid"
+			#	return redirect('/chkabal/checkAccount')
 	else:
 		form=OtherAccountForm()
 		args={'form':form}
