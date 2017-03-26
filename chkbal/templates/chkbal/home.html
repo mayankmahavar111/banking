@@ -1,9 +1,172 @@
 {% extends 'chkbal/base.html' %}
+<!-- Slider Start -->
 {% block body %}
+
 <div>
 <p>this is home page.</p>
     {% if user.id %}
 <p>{{ user.first_name }} is looged in.</p>
     {% endif %}
 </div>
+
+
+    {% load static %}
+    <section id="slider">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-2">
+            <div class="block">
+              <h1 class="animated fadeInUp">Welcome! to <br>Google Bank of India. </h1>
+              <p class="animated fadeInUp">At Bank of Evil, we understand that You are unique and we </br>
+			  also recognize the changes in Your lifestyle,which is </br>
+			  why, regardless of Your aspirations or the size of Your business, </br>
+			  we treat You as individual and special.Come,experience </br> the pleasure of banking with us . . .</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Wrapper Start -->
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-12">
+            <div class="block">
+              <div class="section-title">
+                <h2>About Us</h2>
+                <p>
+				Our Vision</br>
+				“To be the most preferred and trusted Bank”</br></br>
+				Our Mission</br>
+				“Dedicated to customer delight and inclusive growth by leveraging technology with empowered and committed work force”</br>
+				Values</br>
+				Transparency and Ethical.</br>
+				Respect and Empathy for customers.</br>
+				Competence and dedication in all that we do.</br>
+				Nurturing a culture of learning and technological excellence.</br>
+				Commitment to national and social objectives.</br>
+				</p>
+              </div>
+              <p>At Bank of Evil, we understand that all customers are different in unique ways, which is why, regardless of the size of your business or your aspirations, we treat every one as individual and special.
+				This means offering you choices, not only in relation to our products and services but also in the way you interact with us. We understand the changes in your lifestyle, recognize these changes
+				and support you with a high standard of professionalism and service.
+				As a premier bank, we have developed comprehensive range of customized products & services suitable for every kind of market, trade or perceived need - Business or Personal. They include, borrowing
+				facilities, deposits, providing optimum returns on surplus funds or helping with overseas transactions.
+				We believe in total quality at all levels. We have deployed the most modern information technology to deliver products & services for your benefit with an aim to develop an effective long-term
+				relationship. But most of all, Technology is matched to your expectations of service, for today & for the future.</p>
+            </div>
+          </div><!-- .col-md-7 close -->
+          <div class="col-md-5 col-sm-12">
+            <div class="block">
+              <img src="{% static 'chkbal\media\wrapper-img.gif' %}" alt="Wrapper Gif">
+            </div>
+          </div><!-- .col-md-5 close -->
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Call to action Start -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <h2>Open your new Google account.</h2>
+              <p>One account is all you need</p>
+              <a class="btn btn-default btn-call-to-action" href="/chkbal/register/" >Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Start -->
+    <section id="testimonial">
+      <div class="container">
+        <div class="row">
+          <div class="section-title text-center">
+            <h2>Fun Facts</h2>
+            <p>In 2016, a man robbed two Google banks with lemon juice on his face. Since lemon juice makes for invisible ink, he thought it would render his face invisible on camera.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="block">
+              <ul class="counter-box clearfix">
+                <li>
+                  <div class="block">
+                    <i class="ion-card"></i>
+                    <h4 class="counter">1000</h4>
+                    <span>ATM centers</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-glasses-outline"></i>
+                    <h4 class="counter">15000</h4>
+                    <span>Senior Customers.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-people"></i>
+                    <h4 class="counter">30000</h4>
+                    <span>Student Customers</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ribbon-b"></i>
+                    <h4 class="counter">100</h4>
+                    <span>Awards and Honors</span>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="testimonial-carousel">
+              <div id="testimonial-slider" class="owl-carousel">
+                <div>
+                     <img src="{% static 'chkbal/media/cotation.png' %}" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="{% static 'chkbal/media/item-img1.jpg' %}" alt="People">
+                      <p><span>Rose Ray</span> CEO</p>
+                    </div>
+                </div>
+                <div>
+                     <img src="{% static 'chkbal/media/cotation.png' %}" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="{% static 'chkbal/media/item-img1.jpg' %}" alt="People">
+                      <p><span>Rose Ray</span> CEO</p>
+                    </div>
+                </div>
+                <div>
+                     <img src="{% static 'chkbal/media/cotation.png' %}" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="{% static 'chkbal/media/item-img1.jpg' %}" alt="People">
+                      <p><span>Rose Ray</span> CEO</p>
+                    </div>
+                </div>
+                <div>
+                     <img src="{% static 'chkbal/media/cotation.png' %}" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="{% static 'chkbal/media/item-img1.jpg' %}" alt="People">
+                      <p><span>Rose Ray</span> CEO</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock %}
+>>>>>>> origin/master
