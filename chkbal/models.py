@@ -30,6 +30,7 @@ class UserProfile(models.Model):
     phone=models.CharField(max_length=10,default='')
     address=models.CharField(max_length=100,default='')
     balance=models.CharField(max_length=100,default=500)
+    Mp=models.CharField(max_length=6,default=0)
 
     def __str__(self):
         return self.name

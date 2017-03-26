@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from chkbal.forms import RegistrationForm,Editform,AccountForm,DepositeForm,Transaction,OtherAccountForm
+from chkbal.forms import RegistrationForm,Editform,AccountForm,DepositeForm,Transaction,OtherAccountForm,mpinForm
 from django.contrib.auth.forms import UserChangeForm,PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
@@ -10,19 +10,18 @@ from django.views.generic.edit import UpdateView,CreateView
 from django.views import generic
 from django.views.generic import View
 
-y=''
-
 @login_required
 def fund(request,y) :
 	if request.method=="POST":
 		x=UserProfile.objects.get(user=request.user)
+		otheracc=UserProfile.objects.get(user__first_name=y)
 		form=Transaction(request.POST)
 		if form.is_valid():
 			amt=int(form.cleaned_data['amt'])
 			if amt > int(x.balance):
 				return render(request,'chkbal/insufficient.html',{'bal':x.balance})
 			else:
-				return render(request,'chkbal/mpin.html',{'amt':amt})
+				return redirect('/chkbal/mpin/'+y+'/'+amt)
 	else:
 		form =Transaction()
 		x=UserProfile.objects.get(user=request.user)
@@ -34,6 +33,28 @@ def fund(request,y) :
 			'y':otheracc
 			  }
 		return render(request,'chkbal/amount.html',args)
+
+def mpin(request,y,bal):
+	if request.method == "POST":
+		form=mpinForm(request.POST)
+		x = UserProfile.objects.get(user=request.user)
+		if form.is_valid():
+			if form.cleaned_data['mpin']==x.Mp:
+				otheracc=UserProfile.objects.get(user__first_name=y)
+				print otheracc.balance,x.balance
+				otheracc.balance=int(otheracc.balance)+int(bal)
+				x.balance=int(x.balance)-int(bal)
+				x.save()
+				otheracc.save()
+				return redirect('/chkbal/profile')
+			else:
+				return render(request,'chkbal/wrong.html')
+		else:
+			return redirect('/chkbal/profile/transaction')
+	else:
+		form = mpinForm()
+		otheracc=UserProfile.objects.get(user__first_name=y)
+		return render(request, 'chkbal/mpin.html', {'amt': bal, 'y': otheracc, 'form': form})
 
 @login_required
 def deposite(request):
@@ -81,6 +102,7 @@ def updateAccount(request):
 			description=form.cleaned_data['description']
 			balance=form.cleaned_data['balance']
 			address=form.cleaned_data['address']
+			Mp=form.cleaned_data['Mp']
 			x.accountno=account
 			x.IFSC_Code=ifsc
 			x.city=city
@@ -89,6 +111,7 @@ def updateAccount(request):
 			x.balance=balance
 			x.address=address
 			x.name=name
+			x.Mp=Mp
 			x.save()
 			return redirect('/chkbal/profile')
 		else:

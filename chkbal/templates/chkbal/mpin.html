@@ -1,4 +1,10 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-    {{ amt }} to be deducted.
-{% endblock %}
+    {{ amt }} is to be deducted.
+    {{y}}
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+<button type="submit" method="POST"><a href="/chkbal/mpin/{{y}}/{{amt}}"> Proceed</a></button>
+</form>
+        {% endblock %}
