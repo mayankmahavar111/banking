@@ -113,7 +113,9 @@ def Aboutus(request):
 	return render(request,'chkbal/about.html')
 
 def index(request):
-	return render(request,'chkbal/home.html')
+
+	return render(request,'chkbal/home.html',{'user':request.user})
+
 
 @login_required()
 def profile(request):
@@ -215,6 +217,8 @@ def checkAccount(request):
 		form=OtherAccountForm(request.POST)
 		if form.is_valid():
 			y=form.cleaned_data['name']
+
+
 			##print y
 			#x=UserProfile.objects.filter(user=y)
 			#if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
