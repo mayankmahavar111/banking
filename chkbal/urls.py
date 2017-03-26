@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.contrib.auth.views import login,logout,password_reset,password_reset_done,password_reset_confirm,password_reset_complete
 urlpatterns = [
-	url(r'data/$',views.data,name='data'),
+	url(r'^data/(?P<acc>[a-zA-Z]{1,16})/$',views.data,name='data'),
 	url(r'register/$',views.register,name='register'),
 	url(r'logout/$',logout,{'template_name':'chkbal/logout.html'}),
 	url(r'login/$',login,{'template_name':'chkbal/login.html'}),
@@ -21,6 +21,6 @@ urlpatterns = [
 	url(r'^help/$',views.help,name='help'),
 	url(r'^about/$',views.Aboutus,name='about'),
 	url(r'^deposite/$',views.deposite,name='deposite'),
-	url(r'^fund/$',views.fund,name='fund'),
+	url(r'^fund/(?P<y>[a-zA-Z]{1,10})/$',views.fund,name='fund'),
 	url(r'^checkAccount/$',views.checkAccount,name='checkAccount')
 ]

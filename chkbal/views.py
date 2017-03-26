@@ -10,8 +10,10 @@ from django.views.generic.edit import UpdateView,CreateView
 from django.views import generic
 from django.views.generic import View
 
+y=''
+
 @login_required
-def fund(request) :
+def fund(request,y) :
 	if request.method=="POST":
 		x=UserProfile.objects.get(user=request.user)
 		form=Transaction(request.POST)
@@ -24,9 +26,12 @@ def fund(request) :
 	else:
 		form =Transaction()
 		x=UserProfile.objects.get(user=request.user)
+		print y
+		otheracc=UserProfile.objects.get(user__first_name=y)
 		args={
 			'form':form,
-			'x':x
+			'x':x,
+			'y':otheracc
 			  }
 		return render(request,'chkbal/amount.html',args)
 
@@ -95,11 +100,11 @@ def updateAccount(request):
 
 
 
-def data(request):
+def data(request,acc):
+	y=UserProfile.objects.get(user__first_name=acc)
 	x=UserProfile.objects.get(user=request.user)
-	x.accountno=12313540000
-	x.save()
-	return render(request,'chkbal/data.html',{'x':x})
+	print x.accountno
+	return render(request,'chkbal/data.html',{'x':x,'y':y})
 
 def help(request):
 	return render(request,'chkbal/help.html')
@@ -210,6 +215,7 @@ def checkAccount(request):
 		form=OtherAccountForm(request.POST)
 		if form.is_valid():
 			y=form.cleaned_data['name']
+<<<<<<< HEAD
 			##print y
 			#x=UserProfile.objects.filter(user=y)
 			#if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
@@ -218,6 +224,17 @@ def checkAccount(request):
 			#else:
 			#	print "invalid"
 			#	return redirect('/chkabal/checkAccount')
+=======
+			print y
+			x=UserProfile.objects.get(user__first_name=y)
+			print x.accountno,form.cleaned_data['account']
+			if x.accountno == form.cleaned_data['account'] and x.IFSC_Code==form.cleaned_data['ifsc']:
+				print "Valid"
+				return redirect('/chkbal/fund/'+x.name)
+			else:
+				print "invalid"
+				return redirect('/chkbal/checkAccount')
+>>>>>>> origin/master
 	else:
 		form=OtherAccountForm()
 		args={'form':form}

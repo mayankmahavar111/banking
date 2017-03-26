@@ -15,7 +15,7 @@ class Transaction(forms.Form):
 
 
 class OtherAccountForm(forms.Form):
-    account=forms.IntegerField(required=True,min_value=0,label='Account in which amount is to be transfer')
+    account=forms.CharField(required=True,label='Account in which amount is to be transfer')
     name=forms.CharField(required=True,label='Username of reciever')
     ifsc=forms.CharField(required=True,label='IFSC code of reciever')
     phone=forms.CharField(required=True,label='Phone no. of reciever')
