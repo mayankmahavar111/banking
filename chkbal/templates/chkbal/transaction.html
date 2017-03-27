@@ -1,9 +1,30 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-    This is Transaction Page.
+    <section id="call-to-action" style="height:100px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+                <h3 style="padding-bottom: 50px">Transaction Page</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Procceed</button>
+    <button type="submit" style="margin-top: 30px">Procceed</button>
     </form>
+    </div>
+              </div>
+            </div>
+          </div>
+    </section>
 {% endblock %}

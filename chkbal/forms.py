@@ -4,6 +4,10 @@ from .models import UserProfile
 
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 
+class mpinForm(forms.Form):
+    mpin=forms.CharField(required=True,widget=forms.PasswordInput)
+
+
 class DepositeForm(forms.Form):
     Text1=forms.IntegerField(required=True,max_value=9999,min_value=0,label='Serial Key')
     Text2 = forms.IntegerField(required=True, max_value=9999, min_value=0, label=' ')
@@ -23,6 +27,7 @@ class OtherAccountForm(forms.Form):
 
 class AccountForm(forms.ModelForm):
     accountno=forms.CharField(required=True)
+    Mp=forms.CharField(required=True,widget=forms.PasswordInput)
     class Meta:
         model=UserProfile
         fields=(
@@ -34,6 +39,7 @@ class AccountForm(forms.ModelForm):
             'phone',
             'address',
             'balance',
+            'Mp'
         )
 
 

@@ -23,5 +23,6 @@ urlpatterns = [
 	url(r'^about/$',views.Aboutus,name='about'),
 	url(r'^deposite/$',views.deposite,name='deposite'),
 	url(r'^fund/(?P<y>[a-zA-Z]{1,10})/$',views.fund,name='fund'),
-	url(r'^checkAccount/$',views.checkAccount,name='checkAccount')
+	url(r'^checkAccount/$',views.checkAccount,name='checkAccount'),
+	url(r'^mpin/(?P<y>[a-zA-Z]{1,10})/(?P<bal>[0-9]{1,10})/$',views.mpin,name="mpin")
 ]

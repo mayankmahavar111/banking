@@ -22,7 +22,7 @@
     <!-- Js -->
     <script src={% static "chkbal/js/vendor/modernizr-2.6.2.min.js" %}></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src={% static "chkbal/js/vendor/jquery-1.10.2.min.js" %}><\/script>')</script>
     <script src={% static "chkbal/js/bootstrap.min.js" %}></script>
     <script src={% static "chkbal/js/owl.carousel.min.js" %}></script>
     <script src={% static "chkbal/js/plugins.js" %}></script>
@@ -63,17 +63,16 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 {% if user.is_authenticated %}
                     <ul class="nav navbar-nav navbar-right">
-                    <li><a class="active" href="/chkbal/">Home</a></li>
+                    <!--<li><a class="active" href="/chkbal/">Home</a></li>-->
                     <li><a href="/chkbal/profile">Profile</a></li>
                     <li><a href="/chkbal/profile/account-details">Account Details</a></li>
                     <li><a href="/chkbal/profile/update">Update Details</a></li>
-                    <li><a href="/chkbal/profile/mini-statement">Mini-statement</a></li>
+                    <!--<li><a href="/chkbal/profile/mini-statement">Mini-statement</a></li>-->
                     <li><a href="/chkbal/profile/transaction">Transfer Money</a></li>
+                    <li><a href="/chkbal/deposite">Deposit Money</a></li>
                     <li><a href="/chkbal/profile/enquiry">Enquiry</a></li>
                     <li><a href="/chkbal/change-password">Change Password</a></li>
                     <li><a href="/chkbal/logout">Logout</a></li>
-                    <li><a href="/chkbal/help/">Help</a></li>
-                    <li><a href="/chkbal/about/">About Us</a></li>
                     </ul>
                 {% else %}
                     <ul class="nav navbar-nav navbar-right">
@@ -104,7 +103,8 @@
           <div class="col-md-12">
             <div class="footer-manu">
               <ul>
-                <li><a href="#">About Us</a></li>
+                <li><a href="/chkbal/about/">About Us</a></li>
+                <li><a href="/chkbal/help/">Help</a></li>
                 <li><a href="#">Contact us</a></li>
                 <li><a href="#">How it works</a></li>
                 <li><a href="#">Support</a></li>

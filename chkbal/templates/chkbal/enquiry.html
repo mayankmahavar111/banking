@@ -1,12 +1,33 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-    This is the enquiry page.
-    <p>Account NO.{{ user.userprofile.accountno }}</p>
+   <section id="call-to-action" style="height:100px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+                <h3 style="padding-bottom: 50px">Enquiry</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+
+    <p>Account No : {{ user.userprofile.accountno }}</p>
     <p>Account Holder Name : {{ user }}</p>
-    <p>Ifsc Code{{ user.userprofile.IFSC_Code }}</p>
-    <p>Email:{{ user.email }}</p>
-    <p>Phone:{{ user.userprofile.phone }}</p>
-    <p>Adrress:{{ user.userprofile.address }}</p>
-    <p>Current Balance. : {{ user.userprofile.balance }} </p>
+    <p>IFSC Code : {{ user.userprofile.IFSC_Code }}</p>
+    <p>Email : {{ user.email }}</p>
+    <p>Phone : {{ user.userprofile.phone }}</p>
+    <p>Address : {{ user.userprofile.address }}</p>
+    <p>Current Balance : {{ user.userprofile.balance }} </p>
     <p>Last login : {{ user.last_login }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+</section>
 {% endblock %}

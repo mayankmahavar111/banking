@@ -1,11 +1,31 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-    This is acccount details.
+    <section id="call-to-action" style="height:100px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+                <h3 style="padding-bottom: 50px">Update Your Account Details</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
     <form method="post">
     {% csrf_token %}
         {% for field in form %}
             <p>{{ field.label_tag }}     {{ field }}</p>
         {% endfor %}
-    <button type="submit">Proceed</button>
+    <button type="submit" style="margin-top: 30px">Proceed</button>
     </form>
+                </div>
+              </div>
+            </div>
+          </div>
+</section>
 {% endblock %}

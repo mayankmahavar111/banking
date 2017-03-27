@@ -1,8 +1,30 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
+    <section id="call-to-action" style="height:100px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+                <h3>Change Your Password</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="contact-form">
+          <div class="container" style="padding-bottom: 60px">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+
 <form method="post">
-    {% csrf_token %} }
+    {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">password</button>
 </form>
+                </div>
+              </div>
+            </div>
+          </div>
+</section>
 {% endblock %}

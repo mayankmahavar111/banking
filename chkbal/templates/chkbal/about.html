@@ -1,112 +1,53 @@
 {% extends 'chkbal/base.html' %}
 {% block body %}
-<!-- Slider Start -->
-        <section id="global-header">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="block">
-                  <h1>Drop Us A Note</h1>
-                  <p>Don’t just take our word for it. Check out some of our latest work.</p>
-                </div>
-              </div>
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+                <h3>About Us</h3>
             </div>
           </div>
-        </section>
-        <!-- contact form start -->
-        <section id="contact-form">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Email Address">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                  </form>
-                </div>
+        </div>
+      </div>
+    </section>
+<section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-12">
+            <div class="block">
+              <div class="section-title">
+                <h2>Our Motive</h2>
+                <p>
+				Our Vision</br>
+				“To be the most preferred and trusted Bank”</br></br>
+				Our Mission</br>
+				“Dedicated to customer delight and inclusive growth by leveraging technology with empowered and committed work force”</br>
+				Values</br>
+				Transparency and Ethical.</br>
+				Respect and Empathy for customers.</br>
+				Competence and dedication in all that we do.</br>
+				Nurturing a culture of learning and technological excellence.</br>
+				Commitment to national and social objectives.</br>
+				</p>
               </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <form>
-                    <div class="form-group-2">
-                      <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
-                    </div>
-                    <button class="btn btn-default" type="submit">Send Message</button>
-                  </form>
-                </div>
-              </div>
+              <p>At Google Bank of India, we understand that all customers are different in unique ways, which is why, regardless of the size of your business or your aspirations, we treat every one as individual and special.
+				This means offering you choices, not only in relation to our products and services but also in the way you interact with us. We understand the changes in your lifestyle, recognize these changes
+				and support you with a high standard of professionalism and service.
+				As a premier bank, we have developed comprehensive range of customized products & services suitable for every kind of market, trade or perceived need - Business or Personal. They include, borrowing
+				facilities, deposits, providing optimum returns on surplus funds or helping with overseas transactions.
+				We believe in total quality at all levels. We have deployed the most modern information technology to deliver products & services for your benefit with an aim to develop an effective long-term
+				relationship. But most of all, Technology is matched to your expectations of service, for today & for the future.</p>
             </div>
-            <div id="contact-box" class="row">
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <h2>Stop By For A visit</h2>
-                  <ul class="address-block">
-                    <li>
-                      <i class="fa fa-map-marker"></i>North Main Street,Brooklyn Australia
-                    </li>
-                    <li>
-                      <i class="fa fa-envelope-o"></i>Email: contact@mail.com
-                    </li>
-                    <li>
-                      <i class="fa fa-phone"></i>Phone:+88 01672 506 744
-                    </li>
-                  </ul>
+          </div><!-- .col-md-7 close -->
+          <div class="col-md-5 col-sm-12">
+            <div class="block">
+                {% load static %}
+              <img src="{% static 'chkbal\media\wrapper-img.gif' %}" alt="Wrapper Gif">
+            </div>
+          </div><!-- .col-md-5 close -->
+        </div>
+      </div>
+    </section>
 
-                  <ul class="social-icons">
-                    <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <h2>We Also Count In Google Map</h2>
-                    <div class="google-map">
-                      <div id="map"></div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Call to action Start -->
-        <section id="call-to-action">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="block">
-                  <h2>We design delightful digital experiences.</h2>
-                  <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design.</p>
-                  <a class="btn btn-default btn-call-to-action" href="#" >Tell Us Your Story</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 {% endblock %}

@@ -20,24 +20,18 @@
               <div class="col-md-6 col-sm-12">
                 <div class="block">
 {% if x.accountno != '' %}
-<p>Username:{{ user }}</p>
-<p>Firstname:{{ user.first_name }}</p>
-<p>email:{{ user.email }}</p>
-    <p>city:{{ user.userprofile.city }}</p>
-    <p>accountno:{{ user.userprofile.accountno }}</p>
+<p>Username : {{ user }}</p>
+<p>Firstname : {{ user.first_name }}</p>
+<p>Email : {{ user.email }}</p>
+    <p>City : {{ user.userprofile.city }}</p>
+    <p>Account No : {{ user.userprofile.accountno }}</p>
     </div>
     </div>
     </div>
     </div>
     </section>
-
-<a href="/chkbal/profile/update">change_personal_details </a>
-    <a href="/chkbal/profile/account-details">account_details </a>
-    <a href="/chkbal/profile/enquiry">enquiry </a>
-<a href="/chkbal/logout">Logout </a>
-    <a href="/chkbal/profile/transaction">Transfer Money </a>
-    <a href="/chkbal/deposite"> deposite money </a>
-    <a href="/chkbal/profile/mini-statement">Mini-statement </a>
+    <div>
+    </div>
     {% else %}
         <p>{{ user }} please Complete Your Details.</p>
     <a href="/chkbal/profile/account-details">Proceed.</a>
