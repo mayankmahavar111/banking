@@ -15,13 +15,16 @@ def fund(request,y) :
 	if request.method=="POST":
 		x=UserProfile.objects.get(user=request.user)
 		otheracc=UserProfile.objects.get(user__first_name=y)
+		print "hello"
 		form=Transaction(request.POST)
 		if form.is_valid():
-			amt=int(form.cleaned_data['amt'])
-			if amt > int(x.balance):
+			amt=form.cleaned_data['amt']
+
+			if int(amt) > int(x.balance):
 				return render(request,'chkbal/insufficient.html',{'bal':x.balance})
 			else:
-				return redirect('/chkbal/mpin/'+y+'/'+amt)
+				print y,amt
+				return redirect('/chkbal/mpin/'+y+'/'+str(amt))
 	else:
 		form =Transaction()
 		x=UserProfile.objects.get(user=request.user)
