@@ -37,6 +37,7 @@ def fund(request,y) :
 			  }
 		return render(request,'chkbal/amount.html',args)
 
+@login_required
 def mpin(request,y,bal):
 	if request.method == "POST":
 		form=mpinForm(request.POST)
@@ -109,7 +110,6 @@ def updateAccount(request):
 			x.city=city
 			x.phone=phone
 			x.description=description
-			x.balance=balance
 			x.address=address
 			x.name=name
 			x.Mp=Mp
@@ -143,7 +143,7 @@ def index(request):
 	return render(request,'chkbal/home.html',{'user':request.user})
 
 
-@login_required()
+@login_required
 def profile(request):
 	x=UserProfile.objects.get(user=request.user)
 	args={
@@ -266,4 +266,3 @@ def checkAccount(request):
 		form=OtherAccountForm()
 		args={'form':form}
 		return render(request,'chkbal/transaction.html',args)
-
